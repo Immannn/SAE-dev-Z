@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="cadreJeu" prefHeight="530.0" prefWidth="640.0" style="-fx-background-color: red;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zombiesurvivor.controleur.Controleur">
+    <center>
+        <Pane fx:id="paneRacine" prefHeight="514.0" prefWidth="620.0" BorderPane.alignment="CENTER">
+            <children>
+                <TilePane fx:id="paneTerrain" prefColumns="50" prefHeight="640.0" prefRows="0" prefWidth="1600.0" style="-fx-background-color: gray;">
+                    <effect>
+                        <Lighting>
+                            <bumpInput>
+                                <Shadow />
+                            </bumpInput>
+                            <light>
+                                <Light.Distant />
+                            </light>
+                        </Lighting>
+                    </effect>
+                </TilePane>
+                <Pane id="inter" fx:id="interfaceCraft" prefHeight="200.0" prefWidth="610.0" style="-fx-background-color: beige;" translateX="500.0" translateY="230.0" visible="false">
+                    <children>
+                        <Label layoutX="-29.0" layoutY="-25.0" prefHeight="179.0" prefWidth="208.0" text="Ressource nécessaire pour craft &#10;--------------------------------------&#10;Epée : 2 Bois / 2 Pierre&#10; &#10;Bottes : 3 Viande / 1 Bois&#10;&#10;Feu : 5 Bois / 5 Pierre" textFill="#070000" translateX="420.0" translateY="38.0" wrapText="true">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                            <effect>
+                                <Glow />
+                            </effect>
+                        </Label>
+                        <ImageView fitHeight="76.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" translateX="32.0" translateY="40.0">
+                            <effect>
+                                <Glow />
+                            </effect>
+                     <image>
+                        <Image url="@images/Eppe2.png" />
+                     </image>
+                        </ImageView>
+                        <Button mnemonicParsing="false" onAction="#craftEpee" text="Craft Epée" textFill="#c63535" translateX="28.0" translateY="148.0" />
+                        <Button mnemonicParsing="false" onAction="#craftBotte" text="Craft Bottes" textFill="#6e2503" translateX="156.0" translateY="148.0" />
+                        <Button graphicTextGap="5.0" mnemonicParsing="false" onAction="#craftBouleDeFeu" text="Craft Feu" textFill="#e44e2c" translateX="290.0" translateY="148.0" />
+                        <ImageView fx:id="bois" fitHeight="80.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" translateX="163.0" translateY="33.0">
+                            <effect>
+                                <Glow />
+                            </effect>
+                     <image>
+                        <Image url="@images/bottes2.png" />
+                     </image>
+                        </ImageView>
+                        <ImageView id="pierre" fitHeight="68.0" fitWidth="79.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" translateX="299.0" translateY="45.0">
+                            <image>
+                                <Image url="@images/fireball1.png" />
+                            </image>
+                            <effect>
+                                <Glow />
+                            </effect>
+                        </ImageView>
+                    </children>
+                </Pane>
+<!--            <Pane fx:id="FiltreDegat" layoutY="1.0" prefHeight="640.0" prefWidth="1602.0" />-->
+            </children>
+        </Pane>
+    </center>
+</BorderPane>
